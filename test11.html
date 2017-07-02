@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>find()</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.left{
+				width: auto;
+				height: 200px;
+			}
+			.left div{
+				width: 150px;
+				height: 70px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				background: #bfa;
+				border: 1px solid #ccc;
+			}
+			span{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>find()</h2>
+		<div class="left first-div">
+			<div class="div">
+				<ul class="level-1">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+			<div class="div">
+				<ul class="level-2">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+			<div class="div">
+				<ul class="level-3">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+		</div>
+		<button>Click Me:find() has parameters</button>
+		
+		<h3>find()</h3>
+		<div style="border: 1px solid red;">
+			<p>
+				<span>test1</span>
+				<a href="#">test2</a>
+			</p>
+			<p>
+				<span>imooc</span>
+				<a href="#">imooc 2</a>
+			</p>
+			<div>
+				<span>aaron1</span>
+				<a>aaron2</a>
+			</div>
+		</div>
+		<br /><br />
+		<button>Click Me:find() has a $Object</button>
+		
+		<script type="text/javascript">
+			$('button:first').click(function(){
+				$('.div').find('.item-2').css('border','3px solid red');
+			});
+			
+			$('button:last').click(function(){
+				var $span=$('span');
+				$('p').find($span).css('color','red');
+			});
+		</script>
+		
+	</body>
+</html>

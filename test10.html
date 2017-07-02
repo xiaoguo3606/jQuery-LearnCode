@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>children()</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.left{
+				width: auto;
+				height: 120px;
+			}
+			.left div{
+				width: 150px;
+				height: 70px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				background: #bfa;
+				border: 1px solid #ccc;
+			}
+			a{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>children()</h2>
+		<div class="left first-div">
+			<div class="div">
+				<ul class="level-1">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+			<div class="div">
+				<ul class="level-2">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+			<div class="div">
+				<ul class="level-3">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+			</div>
+		</div>
+		<button id="btn1">Click Me:children() has no parameter</button>
+		<button id="btn2">Click Me:children() has parameters</button>
+		
+		<script type="text/javascript">
+			$('#btn1').click(function(){
+				$('.div').children().css('border','3px solid red');
+			});
+			
+			$('#btn2').click(function(){
+				$('.div').children(':last').css('border','3px solid blue');
+			});
+		</script>
+		
+	</body>
+</html>

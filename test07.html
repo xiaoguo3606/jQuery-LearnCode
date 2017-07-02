@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>wrap()</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.left div,.right div{
+				width: 100px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				border: 1px solid #ccc;
+				background: #bfa;
+			}
+			.right div{
+				background: yellow;
+			}
+			p{
+				border: 1px solid red;
+			}
+			a{
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>wrap()</h2>
+		<div class="left">
+			<button class="btn1">Click Me,use wrap() to add a div</button>
+			<button class="btn2">Click Me,use wrap() from a function</button>
+		</div>
+		<div class="right">
+			<div>
+				<p>p</p>
+				<p>p</p>
+			</div>
+			<div>
+				<a>a</a>
+				<a>a</a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.btn1').click(function(){
+				$('p').wrap('<div></div>');
+			});
+			
+			$('.btn2').click(function(){
+				$('a').wrap(function(){
+					console.log($(this).text());
+					return '<div class="'+$(this).text()+'"></div>';
+				})
+			});
+		</script>
+		
+	</body>
+</html>
