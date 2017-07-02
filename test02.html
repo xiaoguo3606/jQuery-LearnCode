@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>empty与remove的区别</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.left,
+			.right{
+				width: 300px;
+			}
+			.left div,
+			.right div{
+				width: 100px;
+				height: 90px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				border: 1px solid #ccc;
+			}
+			.left div{
+				background: #bbffaa;
+			}
+			.right div{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>通过empty与remove移除元素</h2>
+		<div class="left">
+			<button id="btn1">点击通过empty移除内部P元素</button>
+			<button id="btn2">点击通过remove移除内部P元素</button>
+		</div>
+		<div class="right">
+			<div id="test1">
+				<p>P元素1</p>
+				<p>P元素2</p>
+			</div>
+			<div id="test2">
+				<p>P元素3</p>
+				<p>P元素4</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('#btn1').on('click',function(){
+				$('#test1').empty();
+			});
+			$('#btn2').on('click',function(){
+				$('#test2').remove();
+			});
+		</script>
+	</body>
+</html>

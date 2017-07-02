@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>remove()方法</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.test1{
+				background: #bbffaa;
+			}
+			.test2{
+				background: #yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>通过remove()方法移除元素</h2>
+		<div class="test1">
+			<p>P元素1</p>
+			<p>P元素2</p>
+		</div>
+		<div class="test2">
+			<p>P元素3</p>
+			<p>P元素4</p>
+		</div>
+		<button>通过点击使用remove移除元素</button>
+		<button>通过点击使用remove移除元素(使用过滤器)</button>
+		
+		<script type="text/javascript">
+			$('button:first').on('click',function(){
+				$('.test1').remove();
+			});
+			$('button:last').on('click',function(){
+				$('p').remove(':contains("3")');
+			});
+		</script>
+	</body>
+</html>
