@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>add()</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.left {
+				width: auto;
+				height: 120px;
+			}
+			
+			.left div {
+				width: 150px;
+				height: 70px;
+				padding: 5px;
+				margin: 5px;
+				float: left;
+				background: #bfa;
+				border: 1px solid #ccc;
+			}
+			
+			a {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>add方法</h2>
+		<div class="left first-div">
+			<div class="div">
+				<ul class="level-1">
+					<li class="item-1">1</li>
+					<li class="item-2">2</li>
+					<li class="item-3">3</li>
+				</ul>
+				<p>一个新的P元素</p>
+			</div>
+		</div>
+		<div class="right"></div>
+		<hr />
+		<button>点击：add传递元素标签</button>
+		<button>点击：add传递HTML结构</button>
+		<script type="text/javascript">
+			$("button:first").click(function() {
+				$('li').add('p').css('background','red');
+			});
+		</script>
+
+		<script type="text/javascript">
+			$("button:last").click(function() {
+				$('li').add('<p>新的P元素</p>').appendTo($('.right'));
+			});
+		</script>
+
+	</body>
+
+</html>
